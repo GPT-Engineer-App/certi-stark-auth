@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast } from "@chakra-ui/react";
+import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image } from "@chakra-ui/react";
 import { FaCertificate } from "react-icons/fa";
 
 const Index = () => {
@@ -32,9 +32,8 @@ const Index = () => {
           handleSubmit();
         }}
       >
-        <Text fontSize="2xl" mb={4}>
-          <FaCertificate /> AuthentiCert
-        </Text>
+        <Image src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-award'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E" boxSize="50px" alt="AuthentiCert Logo" mb={4} />
+        <Text fontSize="2xl">AuthentiCert</Text>
         <FormControl isRequired>
           <FormLabel htmlFor="fileMetadata">File Metadata</FormLabel>
           <Input id="fileMetadata" placeholder="Enter file metadata" value={fileMetadata} onChange={(e) => setFileMetadata(e.target.value)} />
