@@ -12,7 +12,7 @@ const Index = () => {
     console.log("Submitting files:", files);
     toast({
       title: "Files Submitted",
-      description: "Your files have been submitted for authentication.",
+      description: "Your files have been submitted and are being processed. You will receive your certificate shortly.",
       status: "success",
       duration: 9000,
       isClosable: true,
