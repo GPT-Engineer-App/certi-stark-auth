@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image, Tooltip } from "@chakra-ui/react";
-import { FaCertificate, FaInfoCircle, FaPlus } from "react-icons/fa";
+import { FaCertificate, FaInfoCircle, FaPlus, FaLock } from "react-icons/fa";
 
 const Index = () => {
   const fileInputRef = useRef(null);
@@ -35,7 +35,8 @@ const Index = () => {
         }}
         style={{ marginTop: "60px" }}
       >
-        <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px" }}>
+        <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px", fontFamily: "Arial Black, sans-serif", textShadow: "2px 2px 4px #00008B" }}>
+          <FaLock style={{ color: "#00008B", marginRight: "8px" }} />
           SecureLink
         </Text>
         <Text fontSize="3xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px", color: "#2a69ac", fontFamily: "Georgia, serif" }}>
