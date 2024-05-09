@@ -32,11 +32,11 @@ const Index = () => {
         }}
         style={{ marginTop: "60px" }}
       >
-        <Text fontSize="4xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px", color: "#2a69ac", fontFamily: "Georgia, serif" }}>
-          Verify the authenticity of your files with blockchain-based AI detection technology
-        </Text>
         <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px" }}>
           SecureLink
+        </Text>
+        <Text fontSize="4xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px", color: "#2a69ac", fontFamily: "Georgia, serif" }}>
+          Verify the authenticity of your files with blockchain-based AI detection technology
         </Text>
         <FormControl>
           <FormLabel htmlFor="file">Drag & Drop or Browse Files</FormLabel>
