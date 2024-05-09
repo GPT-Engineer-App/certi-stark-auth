@@ -31,8 +31,8 @@ const Index = () => {
           handleSubmit();
         }}
       >
-        <Image src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6ce6cd5c-5aa9-4259-ad63-9952fab60c86%2Fbed4c0ac-1514-4ec7-85c3-4e39cea0a1f4%2F7EA8CD8C-960E-4E8A-BAC5-6381D58FEDF9.jpg?table=block&id=17ddf423-5204-42fc-b471-9a3e77f0d354&spaceId=6ce6cd5c-5aa9-4259-ad63-9952fab60c86&width=2000&userId=d7e46b51-22d5-412d-a9a9-a537d935c94a&cache=v2" boxSize="100px" alt="SecureLink Logo" mb={8} style={{ alignSelf: "flex-start", marginTop: "20px" }} />
-        <Text fontSize="4xl" mb={4} style={{ alignSelf: "flex-start" }}>
+        <Image src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6ce6cd5c-5aa9-4259-ad63-9952fab60c86%2Fbed4c0ac-1514-4ec7-85c3-4e39cea0a1f4%2F7EA8CD8C-960E-4E8A-BAC5-6381D58FEDF9.jpg?table=block&id=17ddf423-5204-42fc-b471-9a3e77f0d354&spaceId=6ce6cd5c-5aa9-4259-ad63-9952fab60c86&width=2000&userId=d7e46b51-22d5-412d-a9a9-a537d935c94a&cache=v2" boxSize="150px" alt="SecureLink Logo" mb={8} style={{ alignSelf: "flex-start", marginTop: "40px", marginLeft: "20px" }} />
+        <Text fontSize="4xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px" }}>
           Verify the authenticity of your files with blockchain-based AI detection technology
         </Text>
         <Text fontSize="3xl">SecureLink</Text>
