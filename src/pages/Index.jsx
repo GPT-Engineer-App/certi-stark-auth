@@ -64,7 +64,10 @@ const Index = () => {
               e.preventDefault();
               setSelectedFiles(Array.from(e.dataTransfer.files));
             }}
-            onDragOver={(e) => e.preventDefault()}
+            onDragOver={(e) => {
+              e.preventDefault();
+              e.dataTransfer.dropEffect = "copy";
+            }}
           >
             <FaPlus color="green" size="3em" />
             <Input
