@@ -37,7 +37,6 @@ const Index = () => {
       >
         <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px", fontFamily: "Arial Black, sans-serif", color: "#2a69ac", textShadow: "2px 2px 4px #153e75" }}>
           SecureLink <FaLock style={{ color: "#2a69ac", marginLeft: "8px" }} />
-          SecureLink
         </Text>
         <Text fontSize="3xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px", color: "#2a69ac", fontFamily: "Georgia, serif" }}>
           Verify the authenticity of your files with blockchain-based AI detection technology.
