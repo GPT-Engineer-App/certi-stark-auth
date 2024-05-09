@@ -22,7 +22,10 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
+      <Button colorScheme="blue" position="absolute" top="20px" right="20px">
+        Connect Wallet
+      </Button>
       <VStack
         spacing={4}
         as="form"
