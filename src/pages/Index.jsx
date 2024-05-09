@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image, Tooltip } from "@chakra-ui/react";
-import { FaCertificate, FaInfoCircle } from "react-icons/fa";
+import { FaCertificate, FaInfoCircle, FaPlus } from "react-icons/fa";
 
 const Index = () => {
   const fileInputRef = useRef(null);
@@ -48,7 +48,10 @@ const Index = () => {
               <FaInfoCircle />
             </span>
           </Tooltip>
-          <Input id="file" type="file" ref={fileInputRef} multiple />
+          <Button leftIcon={<FaPlus />} colorScheme="green" w="full" mb={2}>
+            Add Files
+          </Button>
+          <Input id="file" type="file" ref={fileInputRef} multiple p={5} boxShadow="lg" bg="white" _hover={{ bg: "gray.100" }} />
           <Text fontSize="sm" mt={2} color="gray.500">
             Files will be processed to verify authenticity. You will receive a digital certificate upon successful verification.
           </Text>
