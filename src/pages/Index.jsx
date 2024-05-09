@@ -31,11 +31,11 @@ const Index = () => {
           handleSubmit();
         }}
       >
-        <Image src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6ce6cd5c-5aa9-4259-ad63-9952fab60c86%2Fbed4c0ac-1514-4ec7-85c3-4e39cea0a1f4%2F7EA8CD8C-960E-4E8A-BAC5-6381D58FEDF9.jpg?table=block&id=17ddf423-5204-42fc-b471-9a3e77f0d354&spaceId=6ce6cd5c-5aa9-4259-ad63-9952fab60c86&width=2000&userId=d7e46b51-22d5-412d-a9a9-a537d935c94a&cache=v2" boxSize="50px" alt="AuthentiCert Logo" mb={8} />
-        <Text fontSize="3xl" mb={4}>
-          Securely verify and certify your files with blockchain technology
+        <Image src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6ce6cd5c-5aa9-4259-ad63-9952fab60c86%2Fbed4c0ac-1514-4ec7-85c3-4e39cea0a1f4%2F7EA8CD8C-960E-4E8A-BAC5-6381D58FEDF9.jpg?table=block&id=17ddf423-5204-42fc-b471-9a3e77f0d354&spaceId=6ce6cd5c-5aa9-4259-ad63-9952fab60c86&width=2000&userId=d7e46b51-22d5-412d-a9a9-a537d935c94a&cache=v2" boxSize="100px" alt="SecureLink Logo" mb={8} style={{ alignSelf: "flex-start", marginTop: "20px" }} />
+        <Text fontSize="4xl" mb={4} style={{ alignSelf: "flex-start" }}>
+          Verify the authenticity of your files with blockchain-based AI detection technology
         </Text>
-        <Text fontSize="2xl">AuthentiCert</Text>
+        <Text fontSize="3xl">SecureLink</Text>
         <FormControl>
           <FormLabel htmlFor="file">Drag & Drop or Browse Files</FormLabel>
           <Text fontSize="sm" color="gray.600" as="span" mr={2}>
@@ -51,8 +51,8 @@ const Index = () => {
             Files will be processed to verify authenticity. You will receive a digital certificate upon successful verification.
           </Text>
         </FormControl>
-        <Button mt={8} colorScheme="vibrant" type="submit">
-          Certify
+        <Button mt={8} colorScheme="green" type="submit">
+          Verify Now
         </Button>
       </VStack>
     </Container>
