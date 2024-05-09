@@ -22,7 +22,7 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
+    <Container centerContent maxW="container.md" minH="100vh" display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
       <Button colorScheme="blue" position="absolute" top="20px" right="20px">
         Connect Wallet
       </Button>
@@ -62,13 +62,26 @@ const Index = () => {
             onClick={() => fileInputRef.current.click()}
             onDrop={(e) => {
               e.preventDefault();
-              setSelectedFiles(Array.from(e.dataTransfer.files));
+              const newFiles = Array.from(e.dataTransfer.files);
+              setSelectedFiles([...selectedFiles, ...newFiles]);
+              toast({
+                title: "Files Uploaded",
+                description: `${newFiles.length} file(s) uploaded successfully.`,
+                status: "info",
+                duration: 5000,
+                isClosable: true,
+              });
             }}
             onDragOver={(e) => {
               e.preventDefault();
-              e.dataTransfer.dropEffect = "copy";
+              e.dataTransfer.dropEffect = "verify";
             }}
           >
+            {selectedFiles.map((file, index) => (
+              <Tooltip key={index} label={file.name} hasArrow>
+                <Image src={URL.createObjectURL(file)} boxSize="50px" m={1} />
+              </Tooltip>
+            ))}
             <FaPlus color="green" size="3em" />
             <Input
               id="file"
@@ -78,17 +91,17 @@ const Index = () => {
               p={5}
               display="none"
               onChange={(e) => {
-                setSelectedFiles(Array.from(e.target.files));
-                if (e.target.files.length > 0) {
-                  const fileName = e.target.files[0].name;
+                const newFiles = Array.from(e.target.files);
+                setSelectedFiles([...selectedFiles, ...newFiles]);
+                newFiles.forEach((file) => {
                   toast({
                     title: "File Ready to Upload",
-                    description: `File selected: ${fileName}`,
+                    description: `File selected: ${file.name}`,
                     status: "info",
                     duration: 5000,
                     isClosable: true,
                   });
-                }
+                });
               }}
             />
           </Button>
