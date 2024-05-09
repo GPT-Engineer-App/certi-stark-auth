@@ -39,15 +39,14 @@ const Index = () => {
           Verify the authenticity of your files with blockchain-based AI detection technology.
         </Text>
         <FormControl>
-          <FormLabel htmlFor="file">Drag & Drop or Browse Files</FormLabel>
-          <Text fontSize="sm" color="gray.600" as="span" mr={2}>
-            Supported Formats
-          </Text>
-          <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz">
-            <span>
-              <FaInfoCircle />
-            </span>
-          </Tooltip>
+          <FormLabel htmlFor="file">
+            Drag & Drop or Browse Files
+            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz">
+              <span>
+                <FaInfoCircle />
+              </span>
+            </Tooltip>
+          </FormLabel>
           <Button
             leftIcon={<FaPlus />}
             colorScheme="green"
@@ -64,8 +63,26 @@ const Index = () => {
             }}
             onDragOver={(e) => e.preventDefault()}
           >
+            <FaPlus color="green" size="3em" />
             Add Files
-            <Input id="file" type="file" ref={fileInputRef} multiple p={5} display="none" />
+            <Input
+              id="file"
+              type="file"
+              ref={fileInputRef}
+              multiple
+              p={5}
+              display="none"
+              onChange={(e) => {
+                const fileName = e.target.files[0].name;
+                toast({
+                  title: "File Ready to Upload",
+                  description: `File selected: ${fileName}`,
+                  status: "info",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              }}
+            />
           </Button>
           <Text fontSize="sm" mt={2} color="gray.500">
             Files will be processed to verify authenticity. You will receive a digital certificate upon successful verification.
