@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image, Tooltip } from "@chakra-ui/react";
 import { FaCertificate, FaInfoCircle, FaPlus, FaLock, FaCheck } from "react-icons/fa";
 
-
 const Index = () => {
   const fileInputRef = useRef(null);
   const toast = useToast();
