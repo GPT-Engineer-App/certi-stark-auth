@@ -42,12 +42,10 @@ const Index = () => {
           Verify the authenticity of your files with blockchain-based AI detection technology.
         </Text>
         <FormControl>
-          <FormLabel htmlFor="file">
+          <FormLabel htmlFor="file" display="flex" alignItems="center">
             Drag & Drop or Browse Files
-            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz">
-              <span>
-                <FaInfoCircle />
-              </span>
+            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz" ml={2}>
+              <FaInfoCircle />
             </Tooltip>
           </FormLabel>
           <Button
