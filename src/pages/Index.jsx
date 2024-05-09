@@ -31,7 +31,7 @@ const Index = () => {
           handleSubmit();
         }}
       >
-        <Image src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-award'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E" boxSize="50px" alt="AuthentiCert Logo" mb={4} />
+        <Image src="https://cdn.leonardo.ai/users/4ee50c12-3520-462b-824b-f672be3497c7/generations/00963935-a9a4-4535-b337-ad3f7bdbff2c/variations/alchemyrefiner_alchemymagic_4_00963935-a9a4-4535-b337-ad3f7bdbff2c_0.jpg" boxSize="50px" alt="AuthentiCert Logo" mb={4} />
         <Text fontSize="2xl">AuthentiCert</Text>
         <FormControl>
           <FormLabel htmlFor="file">Upload File (You can either browse your files or drag and drop them here)</FormLabel>
