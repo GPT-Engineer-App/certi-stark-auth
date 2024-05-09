@@ -35,8 +35,8 @@ const Index = () => {
         }}
         style={{ marginTop: "60px" }}
       >
-        <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px", fontFamily: "Arial Black, sans-serif", textShadow: "2px 2px 4px #00008B" }}>
-          <FaLock style={{ color: "#00008B", marginRight: "8px" }} />
+        <Text fontSize="3xl" style={{ alignSelf: "flex-start", marginLeft: "20px", marginTop: "20px", fontFamily: "Arial Black, sans-serif", color: "#2a69ac", textShadow: "2px 2px 4px #153e75" }}>
+          SecureLink <FaLock style={{ color: "#2a69ac", marginLeft: "8px" }} />
           SecureLink
         </Text>
         <Text fontSize="3xl" mb={4} style={{ alignSelf: "flex-start", marginLeft: "20px", color: "#2a69ac", fontFamily: "Georgia, serif" }}>
@@ -45,7 +45,7 @@ const Index = () => {
         <FormControl>
           <FormLabel htmlFor="file" display="flex" alignItems="center">
             Drag & Drop or Browse Files
-            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz" ml={2}>
+            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz" ml={2} color="#2a69ac">
               <FaInfoCircle />
             </Tooltip>
           </FormLabel>
