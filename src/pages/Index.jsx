@@ -33,12 +33,12 @@ const Index = () => {
         top="20px"
         right="20px"
         onClick={async () => {
-          try {
-            const embeddedWallet = () => ({ connect: () => Promise.resolve("Connected to personal wallet") });
-            const smartWallet = () => ({ connect: () => Promise.resolve("Connected to smart wallet") });
-            const client = "MockClient";
-            const chain = "MockChain";
+          const embeddedWallet = () => ({ connect: () => Promise.resolve("Connected to personal wallet") });
+          const smartWallet = () => ({ connect: () => Promise.resolve("Connected to smart wallet") });
+          const client = "MockClient";
+          const chain = "MockChain";
 
+          try {
             const personalWallet = embeddedWallet();
             const personalAccount = await personalWallet.connect({
               client,
@@ -59,6 +59,14 @@ const Index = () => {
             console.log("Wallets connected:", { personalAccount, smartAccount });
           } catch (error) {
             console.error("Error connecting wallets:", error);
+            toast({
+              title: "Connection Error",
+              description: "Failed to connect wallets. Please try again.",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+              position: "top-right",
+            });
           }
         }}
       >
