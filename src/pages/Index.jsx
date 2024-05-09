@@ -48,7 +48,7 @@ const Index = () => {
         <FormControl>
           <FormLabel htmlFor="file" display="flex" alignItems="center">
             Drag & Drop or Browse Files
-            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz" ml={2} color="#2a69ac" placement="auto">
+            <Tooltip label="Documents: .pdf, .doc, .docx, .odt, .rtf, Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .svg, Audio: .mp3, .wav, .aac, .ogg, .m4a, Video: .mp4, .mov, .wmv, .avi, .mpeg, Archives: .zip, .rar, .7z, .tar.gz" ml={2} color="#2a69ac" placement="bottom">
               <FaInfoCircle />
             </Tooltip>
           </FormLabel>
