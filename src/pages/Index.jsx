@@ -66,7 +66,8 @@ const Index = () => {
                 title: "Files Uploaded",
                 description: `${newFiles.length} file(s) uploaded successfully.`,
                 status: "info",
-                duration: 5000,
+                duration: 10000,
+                position: "top-right",
                 isClosable: true,
               });
             }}
