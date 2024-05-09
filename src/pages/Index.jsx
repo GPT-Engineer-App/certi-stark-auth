@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image, Tooltip } from "@chakra-ui/react";
-import { FaCertificate, FaInfoCircle, FaPlus, FaLock } from "react-icons/fa";
+import { FaCertificate, FaInfoCircle, FaPlus, FaLock, FaCheck } from "react-icons/fa";
 
 const Index = () => {
   const fileInputRef = useRef(null);
@@ -98,11 +98,13 @@ const Index = () => {
                 setSelectedFiles([...selectedFiles, ...newFiles]);
                 newFiles.forEach((file) => {
                   toast({
-                    title: "File Ready to Upload",
+                    title: "File Ready to Verify",
                     description: `File selected: ${file.name}`,
-                    status: "info",
-                    duration: 5000,
+                    status: "success",
+                    duration: 10000,
+                    position: "top-right",
                     isClosable: true,
+                    icon: <FaCheck />,
                   });
                 });
               }}
