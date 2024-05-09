@@ -6,10 +6,10 @@ const Index = () => {
   const fileInputRef = useRef(null);
   const toast = useToast();
 
+  const [selectedFiles, setSelectedFiles] = useState([]);
+
   const handleSubmit = async () => {
-    // Placeholder for blockchain interaction
-    const files = fileInputRef.current.files;
-    console.log("Submitting files:", files);
+    console.log("Submitting files:", selectedFiles);
     toast({
       title: "Files Submitted",
       description: "Your files have been submitted and are being processed. You will receive your certificate shortly.",
@@ -17,8 +17,8 @@ const Index = () => {
       duration: 9000,
       isClosable: true,
     });
-    // Reset form
-    fileInputRef.current.value = "";
+
+    setSelectedFiles([]);
   };
 
   return (
@@ -62,9 +62,11 @@ const Index = () => {
             onClick={() => fileInputRef.current.click()}
             onDrop={(e) => {
               e.preventDefault();
-              fileInputRef.current.files = e.dataTransfer.files;
+              setSelectedFiles(Array.from(e.dataTransfer.files));
             }}
-            onDragOver={(e) => e.preventDefault()}
+            onDragOver={(e) => {
+              e.preventDefault();
+            }}
           >
             <FaPlus color="green" size="3em" />
             <Input
@@ -75,14 +77,17 @@ const Index = () => {
               p={5}
               display="none"
               onChange={(e) => {
-                const fileName = e.target.files[0].name;
-                toast({
-                  title: "File Ready to Upload",
-                  description: `File selected: ${fileName}`,
-                  status: "info",
-                  duration: 5000,
-                  isClosable: true,
-                });
+                setSelectedFiles(Array.from(e.target.files));
+                if (e.target.files.length > 0) {
+                  const fileName = e.target.files[0].name;
+                  toast({
+                    title: "File Ready to Upload",
+                    description: `File selected: ${fileName}`,
+                    status: "info",
+                    duration: 5000,
+                    isClosable: true,
+                  });
+                }
               }}
             />
           </Button>
