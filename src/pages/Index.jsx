@@ -48,10 +48,25 @@ const Index = () => {
               <FaInfoCircle />
             </span>
           </Tooltip>
-          <Button leftIcon={<FaPlus />} colorScheme="green" w="full" mb={2}>
+          <Button
+            leftIcon={<FaPlus />}
+            colorScheme="green"
+            w="full"
+            h="200px"
+            p={5}
+            boxShadow="lg"
+            bg="white"
+            _hover={{ bg: "gray.100" }}
+            onClick={() => fileInputRef.current.click()}
+            onDrop={(e) => {
+              e.preventDefault();
+              fileInputRef.current.files = e.dataTransfer.files;
+            }}
+            onDragOver={(e) => e.preventDefault()}
+          >
             Add Files
+            <Input id="file" type="file" ref={fileInputRef} multiple p={5} display="none" />
           </Button>
-          <Input id="file" type="file" ref={fileInputRef} multiple p={5} boxShadow="lg" bg="white" _hover={{ bg: "gray.100" }} />
           <Text fontSize="sm" mt={2} color="gray.500">
             Files will be processed to verify authenticity. You will receive a digital certificate upon successful verification.
           </Text>
