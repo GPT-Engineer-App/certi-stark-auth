@@ -27,7 +27,41 @@ const Index = () => {
 
   return (
     <Container centerContent maxW="container.md" minH="100vh" display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
-      <Button colorScheme="blue" position="absolute" top="20px" right="20px">
+      <Button
+        colorScheme="blue"
+        position="absolute"
+        top="20px"
+        right="20px"
+        onClick={async () => {
+          try {
+            const embeddedWallet = () => ({ connect: () => Promise.resolve("Connected to personal wallet") });
+            const smartWallet = () => ({ connect: () => Promise.resolve("Connected to smart wallet") });
+            const client = "MockClient";
+            const chain = "MockChain";
+
+            const personalWallet = embeddedWallet();
+            const personalAccount = await personalWallet.connect({
+              client,
+              chain,
+              strategy: "google",
+            });
+
+            const wallet = smartWallet({
+              chain,
+              factoryAddress: "0x63Cd5e48583e331d06c52Be8d88149734c240fC2",
+              gasless: true,
+            });
+            const smartAccount = await wallet.connect({
+              client,
+              personalWallet,
+            });
+
+            console.log("Wallets connected:", { personalAccount, smartAccount });
+          } catch (error) {
+            console.error("Error connecting wallets:", error);
+          }
+        }}
+      >
         Connect Wallet
       </Button>
       <VStack
