@@ -1,7 +1,7 @@
-# certi-stark-auth
+# SecureLink
 
 Objective:
-Create the "AuthentiCert" microservice, a blockchain-based system for issuing and verifying digital file certificates using StarkWare's StarkEx. This system will use zk-STARK technology to ensure scalability, privacy, and security, setting a new standard for digital file authentication.
+Create the "UnGenerated" microservice, a blockchain-based system for issuing and verifying digital file certificates using StarkWare's StarkEx. This system will use zk-STARK technology to ensure scalability, privacy, and security, setting a new standard for digital file authentication.
 
 Microservice Specifications:
 
