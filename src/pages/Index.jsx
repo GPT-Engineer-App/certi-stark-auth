@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container, VStack, Input, Button, Text, FormControl, FormLabel, useToast, Image, Tooltip } from "@chakra-ui/react";
 import { FaCertificate, FaInfoCircle, FaPlus, FaLock, FaCheck } from "react-icons/fa";
-import Navigation from "../components/Navigation";
 
 const Index = () => {
   const fileInputRef = useRef(null);
@@ -28,7 +27,51 @@ const Index = () => {
 
   return (
     <Container centerContent maxW="container.md" minH="100vh" display="flex" flexDirection="column" justifyContent="space-between" alignItems="center" background="linear-gradient(120deg, #9DCEFF, #92FE9D)">
-      <Navigation />
+      <Button
+        colorScheme="blue"
+        position="absolute"
+        top="20px"
+        right="20px"
+        onClick={async () => {
+          const embeddedWallet = () => ({ connect: () => Promise.resolve("Connected to personal wallet") });
+          const smartWallet = () => ({ connect: () => Promise.resolve("Connected to smart wallet") });
+          const client = "MockClient";
+          const chain = "MockChain";
+
+          try {
+            const personalWallet = embeddedWallet();
+            const personalAccount = await personalWallet.connect({
+              client,
+              chain,
+              strategy: "google",
+            });
+
+            const wallet = smartWallet({
+              chain,
+              factoryAddress: "0x63Cd5e48583e331d06c52Be8d88149734c240fC2",
+              gasless: true,
+            });
+            const smartAccount = await wallet.connect({
+              client,
+              personalWallet,
+            });
+
+            console.log("Wallets connected:", { personalAccount, smartAccount });
+          } catch (error) {
+            console.error("Error connecting wallets:", error);
+            toast({
+              title: "Connection Error",
+              description: "Failed to connect wallets. Please try again.",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+              position: "top-right",
+            });
+          }
+        }}
+      >
+        Connect Wallet
+      </Button>
       <VStack
         spacing={4}
         as="form"
