@@ -13,6 +13,9 @@ const Navigation = () => {
       <Button colorScheme="teal" onClick={() => navigate("/")}>
         Return to App
       </Button>
+      <Button colorScheme="teal" onClick={() => alert("Connect Wallet functionality coming soon!")}>
+        Connect Wallet
+      </Button>
     </HStack>
   );
 };
